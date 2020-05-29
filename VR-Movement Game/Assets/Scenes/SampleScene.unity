@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 394177176}
   - component: {fileID: 394177178}
   m_Layer: 0
-  m_Name: Camera_A
+  m_Name: Portal_Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,6 +409,8 @@ MonoBehaviour:
   m_playerCam: {fileID: 1092133170}
   m_portalPair: {fileID: 1573231699}
   m_portalOther: {fileID: 1510228589}
+  m_playerCamTransf: {fileID: 0}
+  m_camera: {fileID: 0}
 --- !u!1 &509608748
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710323083}
   m_Layer: 0
-  m_Name: Pair_A
+  m_Name: PortalConnection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,12 +1039,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202853722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 24.97}
+  m_LocalPosition: {x: 0, y: 2.5, z: 25}
   m_LocalScale: {x: 30, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 509608749}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1221067791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 124564555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1221067797
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221067791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1510228585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,8 +1077,9 @@ GameObject:
   - component: {fileID: 1510228588}
   - component: {fileID: 1510228587}
   - component: {fileID: 1510228586}
+  - component: {fileID: 1510228590}
   m_Layer: 0
-  m_Name: Portal B
+  m_Name: Portal_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1130,12 +1153,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510228585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.73, y: 2, z: 24.945}
-  m_LocalScale: {x: 7.11111, y: 4, z: 1}
+  m_LocalPosition: {x: -7.73, y: 2, z: 24.9999}
+  m_LocalScale: {x: 7.111111, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 710323083}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1510228590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510228585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31194ab6ffc66e45afd2dfd5f04499f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_other: {fileID: 1573231703}
 --- !u!1 &1573231698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,8 +1184,9 @@ GameObject:
   - component: {fileID: 1573231702}
   - component: {fileID: 1573231701}
   - component: {fileID: 1573231700}
+  - component: {fileID: 1573231703}
   m_Layer: 0
-  m_Name: Portal A
+  m_Name: Portal_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,7 +1200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573231698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.73, y: 2, z: 24.945}
+  m_LocalPosition: {x: 8.73, y: 2, z: 24.9999}
   m_LocalScale: {x: 7.111111, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 710323083}
@@ -1180,7 +1217,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9999999, y: 1, z: 6.1232336e-17}
+  m_Size: {x: 1, y: 1, z: 6.1232336e-17}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1573231701
 MeshRenderer:
@@ -1229,3 +1266,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573231698}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1573231703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573231698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6acd0d3143302b943b5d7d7b114e185f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_other: {fileID: 1510228590}
+  m_portalCam: {fileID: 394177176}
+  m_playerCam: {fileID: 1092133170}
