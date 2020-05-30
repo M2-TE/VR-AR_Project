@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class ControllerOptions : MonoBehaviour
 {
-    [Tooltip("Disabling this automatically enables keyboard-movement!")]
+    [Tooltip("Disabling this automatically enables keyboard-movement! Also overrides the EnableJoystickturning on the Playermovement script.")]
     public bool useVRControllerForMovement = false;
     public bool showVRController = false;
 
