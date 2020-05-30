@@ -7,12 +7,15 @@ public class PortalMain : PortalBase
 
     void Update()
     {
+        m_playerCam = Camera.current;
+        if (m_playerCam == null) return;
+
         var relativePosition = transform.InverseTransformPoint(m_playerCam.transform.position);
         relativePosition = Vector3.Scale(relativePosition, new Vector3(-1, 1, -1));
-        m_portalCam.transform.position = m_other.transform.TransformPoint(relativePosition);
+        m_portalCam.transform.position = Other.transform.TransformPoint(relativePosition);
 
         var relativeRotation = transform.InverseTransformDirection(m_playerCam.transform.forward);
         relativeRotation = Vector3.Scale(relativeRotation, new Vector3(-1, 1, -1));
-        m_portalCam.transform.forward = m_other.transform.TransformDirection(relativeRotation);
+        m_portalCam.transform.forward = Other.transform.TransformDirection(relativeRotation);
     }
 }
