@@ -288,8 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6341ca683e23c5445a789c8ad0f0ff59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useVRControllerForMovement: 0
-  showVRController: 0
+  useVRControllerForMovement: 1
+  showVRController: 1
 --- !u!114 &2035124968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,18 +303,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementInput:
-    actionPath: 
+    actionPath: /actions/default/in/Move
     needsReinit: 0
   TurningInput:
-    actionPath: 
+    actionPath: /actions/default/in/Turn
     needsReinit: 0
-  MovementSpeed: 1
-  TurningSpeed: 1
+  MovementSpeed: 4
+  TurningSpeed: 15
   UseHMDDirection: 1
-  EnableJoystickTurning: 0
-  EnableDebugCamera: 0
-  DebugCamera: {fileID: 0}
-  VRCamera: {fileID: 2014920}
+  EnableJoystickTurning: 1
 --- !u!1 &109154
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,8 +479,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  shiftSpeed: 16
   showInstructions: 1
+  player: {fileID: 447954}
+  mouseSensitivity: 100
+  LockMouse: 1
 --- !u!1 &114188
 GameObject:
   m_ObjectHideFlags: 0

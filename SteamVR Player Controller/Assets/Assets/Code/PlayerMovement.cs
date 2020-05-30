@@ -8,15 +8,15 @@ using Valve.VR.InteractionSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public SteamVR_Action_Vector2 MovementInput, TurningInput;
-    public float MovementSpeed = 1, TurningSpeed = 1;
+    public float MovementSpeed = 5f, TurningSpeed = 15f;
 
     [Tooltip("It is recommended to use either the HMDDirection or the JoystickTurning, Using both can be nauseating!")]
     public bool UseHMDDirection = true, EnableJoystickTurning = false;
 
-    [Tooltip("Enabling this Camera automatically enables mouse movement.")]
-    public bool EnableDebugCamera = false;
-
     private ControllerOptions controllerOptions;
+
+    private float rotationX = 0f;
+    private float rotationY = 0f;
 
     private void Awake()
     {
@@ -31,7 +31,11 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 direction = UseHMDDirection ? Player.instance.hmdTransform.TransformDirection(new Vector3(moveX,0,moveY).normalized) : new Vector3(moveX, 0, moveY).normalized; //might need a little rework, depending on rotation :thinking:
 
-        
+        if (EnableJoystickTurning && controllerOptions.useVRControllerForMovement)
+        {
+            rotationY += TurningInput.axis.x * TurningSpeed * Time.deltaTime;
+            transform.localRotation = Quaternion.Euler(0f, rotationY, 0f);
+        }
 
 
         transform.position += MovementSpeed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up);
