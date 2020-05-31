@@ -25,13 +25,9 @@ namespace Valve.VR.InteractionSystem
 
         private bool lockMouse;
 
-		private Vector3 startEulerAngles;
-		private float realTime;
-
 		//-------------------------------------------------
 		void OnEnable()
 		{
-			realTime = Time.realtimeSinceStartup;
             ChangeMouseLockState();
         }
 
@@ -49,7 +45,7 @@ namespace Valve.VR.InteractionSystem
         void Update()
 		{
             if (LockMouse != lockMouse)
-                ChangeMouseLockState(); 
+                ChangeMouseLockState();
 
             float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
             float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
@@ -57,7 +53,7 @@ namespace Valve.VR.InteractionSystem
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            yRotation -= mouseX;
+            yRotation += mouseX;
 
             transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityStandardAssets.Effects;
 
 
 namespace UnityStandardAssets.SceneUtils
@@ -36,6 +35,10 @@ namespace UnityStandardAssets.SceneUtils
         public GraphicRaycaster graphicRaycaster;
         public EventSystem eventSystem;
 
+        class ParticleSystemMultiplier
+        {
+            public float multiplier;
+        }
 
         private ParticleSystemMultiplier m_ParticleMultiplier;
         private List<Transform> m_CurrentParticleList = new List<Transform>();

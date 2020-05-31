@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PortalMain : PortalBase
 {
@@ -7,9 +8,6 @@ public class PortalMain : PortalBase
 
     void Update()
     {
-        m_playerCam = Camera.current;
-        if (m_playerCam == null) return;
-
         var relativePosition = transform.InverseTransformPoint(m_playerCam.transform.position);
         relativePosition = Vector3.Scale(relativePosition, new Vector3(-1, 1, -1));
         m_portalCam.transform.position = Other.transform.TransformPoint(relativePosition);
