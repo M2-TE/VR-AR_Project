@@ -57,7 +57,7 @@ namespace Valve.VR.InteractionSystem
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            yRotation -= mouseX;
+            yRotation += mouseX;
 
             transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
 
