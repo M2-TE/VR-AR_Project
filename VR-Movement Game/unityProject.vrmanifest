@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vrmovementgame.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Benutzer\\Dokumente\\GitHub\\VR-AR_Project\\VR-Movement Game\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "VR-Movement Game [Testing]"
+        }
+      }
+    }
+  ]
+}
