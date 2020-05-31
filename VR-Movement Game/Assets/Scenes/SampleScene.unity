@@ -621,18 +621,6 @@ Transform:
   m_Father: {fileID: 1240008895}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1583912920 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1583912920, guid: b8e2f6cf6e9966a4ea176188f14bd5d1,
-    type: 3}
-  m_PrefabInstance: {fileID: 4517258440501229319}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6acd0d3143302b943b5d7d7b114e185f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &2065818013 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6008887796345404325, guid: eabb868a2f6e8c146a5904e05c158b5f,
@@ -650,20 +638,6 @@ PrefabInstance:
       propertyPath: m_playerCam
       value: 
       objectReference: {fileID: 2065818013}
-    - target: {fileID: 1997832965, guid: b8e2f6cf6e9966a4ea176188f14bd5d1, type: 3}
-      propertyPath: Other
-      value: 
-      objectReference: {fileID: 1583912920}
-    - target: {fileID: 4517258439682158967, guid: b8e2f6cf6e9966a4ea176188f14bd5d1,
-        type: 3}
-      propertyPath: field of view
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517258439682158967, guid: b8e2f6cf6e9966a4ea176188f14bd5d1,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 4517258439930117898, guid: b8e2f6cf6e9966a4ea176188f14bd5d1,
         type: 3}
       propertyPath: m_LocalPosition.x
